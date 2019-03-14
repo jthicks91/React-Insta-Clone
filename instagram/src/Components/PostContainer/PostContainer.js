@@ -1,8 +1,9 @@
 import React from "react";
 import Post from "./Post";
-import "./Posts.css";
+import "./PostContainer.css";
 
 // displays post container with appropiate imageUrl via the elements key from dummyData;
+
 const PostsContainer = props => {
   return (
     <div className="posts-container-wrap">

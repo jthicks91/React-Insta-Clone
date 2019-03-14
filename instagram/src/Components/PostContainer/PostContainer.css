@@ -12,5 +12,22 @@
 .wrapper-post-image {
     height: 100%;
     width: 100%;
-    
+}
+
+.post-image {
+    width: 100%;
+}
+
+.header-post {
+    display: flex;
+}
+
+.post-wrapper-thumbnail {
+    width: 48px;
+    height: 48px;
+}
+
+.thumb-post {
+    border-radius: 50%;
+    height: 100%;
 }

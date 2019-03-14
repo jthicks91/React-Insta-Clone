@@ -1,0 +1,26 @@
+.wrapper-search-bar {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    line-height: 70px;
+    height: 82px;
+    border-bottom: 1px solid #3333;
+}
+
+.wrapper-image {
+    height: 50px;
+}
+
+.image-logo {
+    height: 100%;
+}
+
+.wrapper-social {
+    display: flex;
+}
+
+.social {
+    width: 20px;
+    height: 20px;
+}
+

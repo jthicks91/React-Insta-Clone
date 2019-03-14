@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 import "./App.css";
 import dummyData from "./dummy-data";
+import PostsContainer from "./Components/PostContainer/PostContainer";
+import SearchBar from "./Components/SearchBar/SearchBar";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: dummyData
+      dummyData
     };
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
+        <SearchBar />
+        <PostsContainer posts={this.state.dummyData} />
       </div>
     );
   }
