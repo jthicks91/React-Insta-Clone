@@ -1,0 +1,15 @@
+.comment {
+    font-weight: 290;
+    font-size: 14px;
+}
+
+.usrnm {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.comment-text {
+    margin-left: 4px;
+    padding: 2px;
+    text-align: left;
+}
