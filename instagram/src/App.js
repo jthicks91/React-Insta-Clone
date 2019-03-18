@@ -8,14 +8,28 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData
+      data: [],
+      input: ""
     };
   }
+
+  componentDidMount() {
+    this.setState({ data: dummyData });
+  }
+
+  inputHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <PostsContainer posts={this.state.dummyData} />
+        <SearchBar
+          data={this.state.data}
+          inputHandler={this.inputHandler}
+          input={this.state.input}
+        />
+        <PostsContainer posts={this.state.data} />
       </div>
     );
   }

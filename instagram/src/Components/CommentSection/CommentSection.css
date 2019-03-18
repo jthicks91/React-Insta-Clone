@@ -1,15 +1,15 @@
-.comment {
-    font-weight: 290;
-    font-size: 14px;
+.comment-wrapper {
+    display: flex;
+    align-items: baseline;
+    font-size: 10px;
+    margin: 0;
+    line-height: 3px;
 }
 
-.usrnm {
-    font-weight: 500;
-    font-size: 12px;
+.comment-wrapper h3 {
+    font-weight: bold;
 }
 
-.comment-text {
-    margin-left: 4px;
-    padding: 2px;
-    text-align: left;
+.comment-wrapper p {
+    margin-left: 5px;
 }
