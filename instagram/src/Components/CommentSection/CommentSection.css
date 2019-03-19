@@ -1,15 +1,9 @@
-.comment-wrapper {
-    display: flex;
-    align-items: baseline;
-    font-size: 10px;
-    margin: 0;
-    line-height: 3px;
+.comment-area {
+    margin: 0 auto;
+    width: 95%;
 }
 
-.comment-wrapper h3 {
-    font-weight: bold;
-}
-
-.comment-wrapper p {
-    margin-left: 5px;
+input {
+    width: 90%;
+    margin-left: 2%;
 }

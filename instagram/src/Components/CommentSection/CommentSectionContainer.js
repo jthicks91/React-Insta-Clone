@@ -1,27 +1,51 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Comment from "./Comment";
 
-const CommentSection = props => {
-  return (
-    <div className="commentSection">
-      {props.comments.map(c => {
-        return <Comment key={c.username} comment={c} />;
-      })}
+// chaniging to class component to controls state and add event handlers for adding comments and rendering here
 
-      <p className="LoggedTime">{props.LoggedTime}</p>
-      <input className="inputText" placeholder="Add Comment..." />
-    </div>
-  );
-};
+class CommentSectionConatiner extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalComments: this.props.eachPost.comments,
+      commentInput: ""
+    };
+  }
 
-CommentSection.propTypes = {
-  item: PropTypes.arrayOf(
-    PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
-    })
-  )
-};
+  addNewComment = event => {
+    event.preventDefault();
+    let comment = {
+      username: "Jordan",
+      text: this.state.commentInput
+    };
+    this.setState({
+      totalComments: [...this.state.totalComments, comment],
+      commentInput: ""
+    });
+  };
 
-export default CommentSection;
+  commentInputHandler = event => {
+    this.setState({ commentInput: event.target.value });
+  };
+
+  render() {
+    return (
+      <div className="comment-area">
+        {this.state.totalComments.map(eachComment => (
+          <Comment eachComment={eachComment} key={this.props.index} />
+        ))}
+
+        <form onSubmit={this.addNewComment}>
+          <input
+            type="text"
+            placeholder="... Add A Comment"
+            onChange={this.commentInputHandler}
+            value={this.state.commentInput}
+          />
+        </form>
+      </div>
+    );
+  }
+}
+
+export default CommentSectionConatiner;

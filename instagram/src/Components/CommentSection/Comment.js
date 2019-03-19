@@ -1,21 +1,20 @@
 import React from "react";
-import PropTypes from "prop-types";
-import "./CommentSection.css";
+import "./Comment.css";
 
-const Comment = props => {
+function Comment(props) {
   return (
     <div className="comment-wrapper">
-      <p className="comment">{props.comment.text}</p>
-      <h3 className="usrnm">{props.comment.username}</h3>
+      <p>{props.eachComment.text}</p>
+      <h3>{props.eachComment.username}</h3>
     </div>
   );
-};
+}
 
-Comment.propTypes = {
-  comment: PropTypes.shape({
-    text: PropTypes.string,
-    username: PropTypes.string
-  })
-};
+// Comment.propTypes = {
+//   comment: PropTypes.shape({
+//     text: PropTypes.string,
+//     username: PropTypes.string
+//   })
+// };
 
 export default Comment;
