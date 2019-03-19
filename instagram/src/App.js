@@ -14,11 +14,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ data: dummyData });
+    this.setState({ data: dummyData, filtered: dummyData });
   }
 
   inputHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.searchHandler(event);
   };
 
   render() {

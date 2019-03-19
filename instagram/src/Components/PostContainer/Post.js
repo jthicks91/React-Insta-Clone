@@ -31,12 +31,12 @@ class Post extends React.Component {
     };
   }
 
-  likeHandler = () => {
-    let num = this.state.like;
-    if (this.state.liked === false) {
-      this.setState({ like: num + 1, liked: true });
-    } else this.setState({ like: num - 1, liked: false });
-  };
+  // likeHandler = () => {
+  //   let num = this.state.like;
+  //   if (this.state.liked === false) {
+  //     this.setState({ like: num + 1, liked: true });
+  //   } else this.setState({ like: num - 1, liked: false });
+  // };
 
   render() {
     let i = 0;

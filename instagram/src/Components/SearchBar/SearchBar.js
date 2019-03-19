@@ -24,7 +24,12 @@ function SearchBar(props) {
           src="./icons8-compass-32.png"
           alt="compass icon"
         />
-        <img className="igIcons" src="./icons8-heart-30.png" alt="heart icon" />
+        <img
+          className="igIcons"
+          src="./icons8-heart-32.png"
+          alt="compass icon"
+        />
+        {/* <img className="igIcons" src="./icons8-heart-30.png" alt="heart icon" /> */}
         <img
           className="igIcons"
           src="./icons8-customer-32.png"
