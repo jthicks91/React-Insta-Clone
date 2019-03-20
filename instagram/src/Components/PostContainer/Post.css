@@ -1,32 +1,6 @@
-.Post {
-    border: 1px solid lightslategray;
+.posts {
     margin-bottom: 20px;
-}
-
-.usrHeader {
+    flex-direction: column;
     display: flex;
-    padding: 10px;
-    align-items: center;
-}
-
-.usrHeader h2 {
-    margin: 0 10px;
-    font-size: 24px;
-}
-
-.userHeader img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.comments-and-likes .icons {
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.likes {
-    font-weight: bold;
-    margin-left: 15px;
-    font-size: 10px;
+    width: 100%;
 }

@@ -34,7 +34,7 @@ class CommentSectionConatiner extends Component {
 
   render() {
     return (
-      <div className="comment-area">
+      <div className="comments-section">
         {this.state.comments.map((comment, index) => (
           <Comment comment={comment} key={index} />
         ))}
