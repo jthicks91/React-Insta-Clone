@@ -1,51 +1,60 @@
-import React from "react";
+import React, { Component } from "react";
 import Comment from "./Comment";
+import "./CommentSection.css";
+import PropTypes from "prop-types";
 
 // chaniging to class component to controls state and add event handlers for adding comments and rendering here
 
-class CommentSectionConatiner extends React.Component {
+class CommentSectionConatiner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalComments: this.props.eachPost.comments,
-      commentInput: ""
+      comments: props.comments,
+      text: ""
     };
   }
 
   addNewComment = event => {
     event.preventDefault();
-    let comment = {
-      username: "Jordan",
-      text: this.state.commentInput
-    };
-    this.setState({
-      totalComments: [...this.state.totalComments, comment],
-      commentInput: ""
-    });
+    this.setState(prevState => ({
+      comments: [
+        ...prevState.comments,
+        {
+          username: "Jordan",
+          text: this.state.text
+        }
+      ]
+    }));
   };
+  // add functionality for adding new comments using prevState instead of hard-coding and using spread-operator instead to practice ES6;
 
-  commentInputHandler = event => {
-    this.setState({ commentInput: event.target.value });
+  changeHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     return (
       <div className="comment-area">
-        {this.state.totalComments.map(eachComment => (
-          <Comment eachComment={eachComment} key={this.props.index} />
+        {this.state.comments.map((comment, index) => (
+          <Comment comment={comment} key={index} />
         ))}
 
         <form onSubmit={this.addNewComment}>
           <input
             type="text"
+            name="text"
             placeholder="... Add A Comment"
-            onChange={this.commentInputHandler}
-            value={this.state.commentInput}
+            onChange={this.changeHandler}
+            value={this.state.text}
           />
         </form>
       </div>
     );
   }
 }
+
+CommentSectionConatiner.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default CommentSectionConatiner;
