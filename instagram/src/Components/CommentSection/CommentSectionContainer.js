@@ -8,8 +8,10 @@ import PropTypes from "prop-types";
 class CommentSectionConatiner extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
+
     this.state = {
-      comments: props.comments,
+      comments: this.props.comments,
       text: ""
     };
   }
@@ -25,7 +27,11 @@ class CommentSectionConatiner extends Component {
         }
       ]
     }));
+    this.setState({
+      text: ""
+    });
   };
+
   // add functionality for adding new comments using prevState instead of hard-coding and using spread-operator instead to practice ES6;
 
   changeHandler = event => {
@@ -33,6 +39,7 @@ class CommentSectionConatiner extends Component {
   };
 
   render() {
+    console.log(this.state.comments);
     return (
       <div className="comments-section">
         {this.state.comments.map((comment, index) => (

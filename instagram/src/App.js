@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: [],
+      data: [],
       input: ""
     };
   }
@@ -24,6 +24,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.data);
     return (
       <div className="App">
         <SearchBar
@@ -31,7 +32,7 @@ class App extends Component {
           inputHandler={this.inputHandler}
           input={this.state.input}
         />
-        <PostsContainer posts={this.state.data} />
+        <PostsContainer data={this.state.data} />
       </div>
     );
   }

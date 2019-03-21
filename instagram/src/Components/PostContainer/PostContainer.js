@@ -27,33 +27,36 @@ export default class PostContainer extends Component {
   };
 
   render() {
+    console.log(this.props.data);
     return (
       <div className="posts-container">
-        <header>
-          <img src={this.props.data.thumbnailUrl} alt="" />
-          <h3>{this.props.data.username}</h3>
-        </header>
-        <img src={this.props.data.imageUrl} alt="" />
-        <div className="actions">
-          <img
-            src={this.state.liked ? pinkheart : heart}
-            onClick={this.likePost}
-            alt=""
-          />
-          <img src={comment} alt="" />
-        </div>
-        <div className="likes">
-          <p>{this.state.likes} likes </p>
-        </div>
-        <CommentSectionConatiner
-          className="commentSection"
-          comments={this.props.data.comments}
-        />
+        {this.props.data.map(posts => {
+          return (
+            <>
+              <header>
+                <img src={posts.thumbnailUrl} alt="" />
+                <h3>{posts.username}</h3>
+              </header>
+              <img src={posts.imageUrl} alt="" />
+              <div className="actions">
+                <img src={heart} onClick={this.likePost} alt="" />
+                <img src={comment} alt="" />
+              </div>
+              <div className="likes">
+                <p>{posts.likes} likes </p>
+              </div>
+              <CommentSectionConatiner
+                className="commentSection"
+                comments={posts.comments}
+              />
+            </>
+          );
+        })}
       </div>
     );
   }
 }
 
 PostContainer.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.array
 };
