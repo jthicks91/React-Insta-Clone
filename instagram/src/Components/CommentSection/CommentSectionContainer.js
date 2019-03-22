@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Comment from "./Comment";
-import "./CommentSection.css";
+import "./CommentSection.scss";
 import PropTypes from "prop-types";
 
 // chaniging to class component to controls state and add event handlers for adding comments and rendering here
@@ -22,7 +22,7 @@ class CommentSectionConatiner extends Component {
       comments: [
         ...prevState.comments,
         {
-          username: "Jordan",
+          username: "jtaylorhicks",
           text: this.state.text
         }
       ]
@@ -50,7 +50,7 @@ class CommentSectionConatiner extends Component {
           <input
             type="text"
             name="text"
-            placeholder="... Add A Comment"
+            placeholder="Add A Comment..."
             onChange={this.changeHandler}
             value={this.state.text}
           />

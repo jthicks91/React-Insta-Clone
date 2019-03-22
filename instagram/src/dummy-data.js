@@ -35,7 +35,8 @@ const dummyData = [
     comments: [
       {
         username: "twitch",
-        text: "Epic Street Fighter action here in Las Vegas at #EVO2017!"
+        text:
+          "BYM SOAAAARRRSSSS through the compeittion at #FortniteFallSkirmish!"
       },
       {
         username: "michaelmarzetta",

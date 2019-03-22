@@ -1,0 +1,54 @@
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 48px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 10px;
+    border-bottom: 1px solid silver;
+
+}
+
+.searchBarLogos, .searchBarIcons {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchBarLogos > .icon {
+    height: 24px;
+    width: auto;
+}
+
+.searchBarLogos > .logo {
+    padding-left: 15px;
+    margin-left: 15px;
+    width: auto;
+    height: 24px;
+    border-left: 1px solid black;
+}
+
+.searchBarLogos {
+    justify-content: space-between;
+    width: 20%;
+}
+
+.searchBarIcons {
+    width: 20%;
+    justify-content: space-between;
+
+    img {
+        width: auto;
+        height: 24px;
+    }
+
+}
+
+input {
+    font-size: 1.6rem;
+    height: 24px;
+    text-align: center;
+    width: 30%;
+}

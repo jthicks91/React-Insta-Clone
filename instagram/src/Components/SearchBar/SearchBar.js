@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBar.css";
+import "./SearchBar.scss";
 import PropTypes from "prop-types";
 
 import igLogo from "./igLogo.png";

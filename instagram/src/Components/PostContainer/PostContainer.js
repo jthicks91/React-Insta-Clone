@@ -1,62 +1,29 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-import "./PostContainer.css";
+import React from "react";
+import "./PostContainer.scss";
 import PropTypes from "prop-types";
-import CommentSectionConatiner from "../CommentSection/CommentSectionContainer";
+import Post from "./Post";
+// import CommentSectionConatiner from "../CommentSection/CommentSectionContainer";
 
-import heart from "./heart.png";
-import pinkheart from "./pinkheart.png";
-import comment from "./comment.png";
+// import heart from "./heart.png";
+// import pinkheart from "./pinkheart.png";
+// import comment from "./comment.png";
 
 //moving liked feature into this component and out of post.js
 
-export default class PostContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      likes: this.props.data.likes,
-      liked: false
-    };
-  }
+const PostsContainer = props => {
+  return (
+    <div classname="posts">
+      {props.posts.map(p => (
+        <Post post={p} key={p.imageUrl} likePost={props.likePost} />
+      ))}
+    </div>
+  );
+};
 
-  likePost = () => {
-    this.setState(prevState => ({
-      liked: !prevState.liked,
-      likes: !prevState.liked ? prevState.likes + 1 : prevState.likes - 1
-    }));
-  };
-
-  render() {
-    console.log(this.props.data);
-    return (
-      <div className="posts-container">
-        {this.props.data.map(posts => {
-          return (
-            <>
-              <header>
-                <img src={posts.thumbnailUrl} alt="" />
-                <h3>{posts.username}</h3>
-              </header>
-              <img src={posts.imageUrl} alt="" />
-              <div className="actions">
-                <img src={heart} onClick={this.likePost} alt="" />
-                <img src={comment} alt="" />
-              </div>
-              <div className="likes">
-                <p>{posts.likes} likes </p>
-              </div>
-              <CommentSectionConatiner
-                className="commentSection"
-                comments={posts.comments}
-              />
-            </>
-          );
-        })}
-      </div>
-    );
-  }
-}
-
-PostContainer.propTypes = {
+PostsContainer.propTypes = {
   data: PropTypes.array
 };
+
+export default PostsContainer;

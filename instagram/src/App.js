@@ -10,7 +10,9 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      input: ""
+      input: "",
+      filteredPosts: [],
+      posts: []
     };
   }
 
@@ -23,6 +25,15 @@ class App extends Component {
     this.searchHandler(event);
   };
 
+  searchPostsHandler = e => {
+    const posts = this.state.posts.filter(p => {
+      if (p.username.includes(e.target.value)) {
+        return p;
+      }
+    });
+    this.setState({ filteredPosts: posts });
+  };
+
   render() {
     console.log(this.state.data);
     return (
@@ -31,8 +42,10 @@ class App extends Component {
           data={this.state.data}
           inputHandler={this.inputHandler}
           input={this.state.input}
+          searchPosts={this.searchPostsHandler}
+          searchTerm={this.state.searchTerm}
         />
-        <PostsContainer data={this.state.data} />
+        <PostsContainer posts={this.state.data} />
       </div>
     );
   }

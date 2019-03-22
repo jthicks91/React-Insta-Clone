@@ -1,7 +1,9 @@
 .posts-container {
-    disaply: flex;
+    display: flex;
     width: 100%;
     flex-direction: column;
+    background-color: white;
+    border: 1px solid lightgrey;
 }
 
 .postContainer > img {
@@ -73,5 +75,5 @@
     height: 60px;
     max-width: 100%;
     width: 100%;
-    border: 0 px solid black;
+    // border: 20px solid red;
 }
