@@ -20,10 +20,11 @@ const SearchBar = props => {
 
       <input
         type="text"
-        name="searchCriteria"
-        value={props.text}
-        onChange={props.changed}
+        // name="searchCriteria"
+        // value={props.text}
+        // onChange={props.changed}
         placeholder=" Search"
+        onKeyDown={props.searchPosts}
       />
 
       <div className="searchBarIcons">

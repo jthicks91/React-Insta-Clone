@@ -26,26 +26,30 @@ class App extends Component {
   };
 
   searchPostsHandler = e => {
-    const posts = this.state.posts.filter(p => {
-      if (p.username.includes(e.target.value)) {
-        return p;
-      }
+    const filteredPosts = this.state.posts.filter(post => {
+      return post.username.includes(e.target.value);
     });
-    this.setState({ filteredPosts: posts });
+    return this.setState({ filteredPosts });
   };
 
   render() {
-    console.log(this.state.data);
     return (
       <div className="App">
         <SearchBar
-          data={this.state.data}
-          inputHandler={this.inputHandler}
-          input={this.state.input}
-          searchPosts={this.searchPostsHandler}
           searchTerm={this.state.searchTerm}
+          searchPosts={this.searchPostsHandler}
+          data={this.state.data}
+          // inputHandler={this.inputHandler}
+          // input={this.state.input}
         />
-        <PostsContainer posts={this.state.data} />
+        <PostsContainer
+          posts={
+            this.state.filteredPosts.length > 0
+              ? this.state.filteredPosts
+              : this.state.data
+          }
+        />
+        {/* posts={this.state.data} */}
       </div>
     );
   }
