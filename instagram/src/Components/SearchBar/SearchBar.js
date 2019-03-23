@@ -20,8 +20,8 @@ const SearchBar = props => {
 
       <input
         type="text"
-        // name="searchCriteria"
-        // value={props.text}
+        name="searchCriteria"
+        value={props.input}
         // onChange={props.changed}
         placeholder=" Search"
         onKeyDown={props.searchPosts}

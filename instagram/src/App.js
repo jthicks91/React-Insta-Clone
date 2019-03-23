@@ -22,12 +22,13 @@ class App extends Component {
 
   inputHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
-    this.searchHandler(event);
+    this.searchPostsHandler(event);
   };
 
   searchPostsHandler = e => {
-    const filteredPosts = this.state.posts.filter(post => {
-      return post.username.includes(e.target.value);
+    console.log(this.state.data);
+    const filteredPosts = this.state.data.filter(post => {
+      return post.username.toLowerCase().includes(e.target.value);
     });
     return this.setState({ filteredPosts });
   };
