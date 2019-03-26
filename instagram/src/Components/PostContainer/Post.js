@@ -34,6 +34,12 @@ export default class Post extends Component {
     }));
   };
 
+  // likePost = () => {
+  //   let likes = this.props.post.likes;
+  //   likes++;
+  //   this.setState({ likes });
+  // };
+
   render() {
     console.log(this.props.data);
     return (
@@ -53,7 +59,7 @@ export default class Post extends Component {
             <img src={comment} alt="" />
           </div>
           <div className="likes">
-            <p>{this.props.post.likes} likes </p>
+            <p>{this.state.likes} likes </p>
           </div>
           <CommentSectionConatiner
             className="commentSection"
