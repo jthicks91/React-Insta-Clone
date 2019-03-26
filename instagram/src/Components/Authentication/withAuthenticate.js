@@ -1,7 +1,7 @@
 import React from "react";
 
-const withAuthenticate = PostsPage => Login =>
-  class extends React.Component {
+const withAuthenticate = WrappedComponent1 => WrappedComponent2 => {
+  return class extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -10,16 +10,18 @@ const withAuthenticate = PostsPage => Login =>
     }
 
     componentDidMount() {
-      if (!localStorage.getItem("user")) {
-        this.setState({ loggedIn: false });
-      } else {
+      if (localStorage.getItem("username")) {
         this.setState({ loggedIn: true });
       }
     }
     render() {
-      if (this.state.loggedIn) return <PostsPage />;
-      return <Login />;
+      if (this.state.loggedIn === true) {
+        return <WrappedComponent1 />;
+      } else {
+        return <WrappedComponent2 />;
+      }
     }
   };
+};
 
 export default withAuthenticate;

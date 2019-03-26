@@ -14,24 +14,27 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleLoginSubmit = e => {
-    const user = this.state.username;
-    localStorage.setItem("user", user);
+  handleLoginSubmit(e) {
+    localStorage.setItem("username", `{this.state.user}`);
+    this.setState({
+      username: "",
+      password: ""
+    });
     window.location.reload();
-  };
+  }
 
   render() {
     return (
       <div className="login-form">
-        <h3>Welcome to React Insta Clone</h3>
+        <h3>Welcome to Instagram</h3>
         <div>Please Login</div>
         <form>
           <input
             type="text"
-            placeholder="User Name"
+            placeholder="username"
             name="username"
             value={this.state.username}
-            onChange={this.handleInputChange}
+            onChange={this.handleInputChange.bind(this)}
           />
         </form>
         <form>
@@ -40,12 +43,10 @@ class Login extends Component {
             placeholder="Password"
             name="password"
             value={this.state.password}
-            onChange={this.handleInputChange}
+            onChange={this.handleInputChange.bind(this)}
           />
           <br />
-          <button color="success" size="large" onClick={this.handleLoginSubmit}>
-            Log In
-          </button>
+          <button onClick={this.handleLoginSubmit.bind(this)}>Log In</button>
         </form>
       </div>
     );

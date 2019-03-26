@@ -13,7 +13,10 @@ const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      posts: [],
+      filteredPosts: []
+    };
   }
 
   render() {
